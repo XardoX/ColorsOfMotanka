@@ -83,8 +83,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if(value.isPressed)
         {
-            if(_isOnTheFloor) _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-            _animator.SetTrigger("Jumped");
+            if(_isOnTheFloor)
+            {
+                _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                _animator.SetTrigger("Jumped");
+            }     
         }
     }
     
