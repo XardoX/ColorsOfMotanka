@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Prototype
+  m_Name: Hatching
   m_Shader: {fileID: -6465566751694194690, guid: abdafc583b5d263428ef3edc074c39a6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
