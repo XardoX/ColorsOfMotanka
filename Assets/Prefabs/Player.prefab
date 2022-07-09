@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de98afcbe92a2f41aa275274afd70e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 10
-  _braking: 10
+  _acceleration: 20
+  _braking: 25
   _moveInput: 0
   _currentSpeed: 0
   _speed: 11
@@ -254,7 +254,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 8665256198845120040}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d2950fd3006ae0d469bbb66da772c0d0, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
