@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using DG.Tweening;
+using Mono.Cecil;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MyBox;
@@ -30,15 +33,27 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rb;
     float _horizontalMove;
     
-    
     bool _flippedToRight = true;
     private Interactables currentNpc;
+
+    private AudioSource audioSource;
     
+    private Dictionary<string, AudioClip> audioLibrary = new Dictionary<string, AudioClip>();
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        foreach (var audioClip in Resources.LoadAll<AudioClip>("Music/"))
+        {
+            audioLibrary.Add(audioClip.name, audioClip);
+        }
+    }
+
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
-        // _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -78,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Physics2D.Raycast(transform.position, Vector2.down, _groundCheckDistance,_groundCheckMask))
         {
+            if (!_isGrounded)
+            {
+                PlayAudioClip("Falling");
+                
+            }
             _isGrounded = true;
             Debug.DrawRay(transform.position, Vector3.down *_groundCheckDistance,Color.green);
         } else 
@@ -106,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(_isGrounded)
             {
+                PlayAudioClip("Jumping");
                 _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 _animator.SetTrigger("Jumped");
             }     
@@ -121,6 +142,12 @@ public class PlayerMovement : MonoBehaviour
         Flip();
     }
 
+    private void PlayAudioClip(string name)
+    {
+        audioSource.clip = audioLibrary[name];
+        audioSource.Play();
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
