@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Mural.meta
 guid: 8b05afef24436b340bcb68e5ba5b0521
+========
+guid: 6f52561cfa0150a4584ad67f49a11251
+>>>>>>>> 2c62405d4ae98ce32293b328ee9acbd65647ba22:Assets/Resources/Music.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
