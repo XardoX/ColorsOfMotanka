@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
 {
     Animator _animator;
     [SerializeField]
+    float _acceleration = 10f;
+    [SerializeField]
+    float _braking = 10f;
+    [SerializeField]
     float _moveInput;
     [SerializeField]
     float _currentSpeed;
@@ -17,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     float _jumpForce = 50;
     bool _isOnTheFloor = true;
     float _horizontalMove;
+    
     
     [SerializeField]
     SpriteRenderer _spriteRenderer;
@@ -33,12 +38,33 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         _horizontalMove = _currentSpeed * _moveInput;
+        _animator.SetFloat("jumpingVelocity", _rb.velocity.y);
     }
-    
+
     void FixedUpdate()
     {
         _rb.velocity = new Vector2(_horizontalMove, _rb.velocity.y);
-        _animator.SetFloat("speed", Mathf.Abs( _horizontalMove));
+        _animator.SetFloat("speed", Mathf.Abs(_horizontalMove));
+        _rb.velocity = new Vector2(_currentSpeed, _rb.velocity.y);
+
+        if (_moveInput != 0.0f)
+        {
+            _currentSpeed += _acceleration * Time.deltaTime * Mathf.Sign(_moveInput);
+            _currentSpeed = Mathf.Clamp(_currentSpeed, -_speed, _speed);
+        }
+        else
+        {
+            if (_currentSpeed > 0)
+            {
+                _currentSpeed -= _braking * Time.deltaTime;
+                _currentSpeed = Mathf.Clamp(_currentSpeed, 0, _speed);
+            }
+            else if (_currentSpeed < 0)
+            {
+                _currentSpeed += _braking * Time.deltaTime;
+                _currentSpeed = Mathf.Clamp(_currentSpeed, -_speed, 0);
+            }
+        }
     }
 
     void Flip()
@@ -64,16 +90,7 @@ public class PlayerMovement : MonoBehaviour
     Tween currentMoveTween;
     void OnMove(InputValue value)
     {
-        if(currentMoveTween != null) currentMoveTween.Kill();
         _moveInput = value.Get<float>();
-        if(value.isPressed || _moveInput !=0f)
-        {
-            currentMoveTween =  DOTween.To(() => _currentSpeed, x => _currentSpeed = x, _speed, 1);
-        }
-        else if(_moveInput == 0f)
-        {
-            currentMoveTween =  DOTween.To(() => _currentSpeed, x => _currentSpeed = x, 0, 1).SetEase(Ease.OutCirc);
-        }
         Flip();
     }
 
