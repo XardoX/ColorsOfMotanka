@@ -24,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField][ReadOnly][Foldout("Debug", true)] 
     float _currentSpeed;
+    [SerializeField][ReadOnly]
     bool _isGrounded = false;
     Animator _animator;
     Rigidbody2D _rb;
-    bool _isOnTheFloor = true;
     float _horizontalMove;
     
     
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(value.isPressed)
         {
-            if(_isOnTheFloor)
+            if(_isGrounded)
             {
                 _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 _animator.SetTrigger("Jumped");
@@ -123,18 +123,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag=="Platform")
-        {
-            _isOnTheFloor = true;
-        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Platform")
-        {
-            _isOnTheFloor = false;
-        }
+        
     }
     
     private void OnTriggerEnter2D(Collider2D collider)

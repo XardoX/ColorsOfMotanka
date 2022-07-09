@@ -78,9 +78,10 @@ MonoBehaviour:
   _groundCheckDistance: 0.5
   _groundCheckMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   _spriteRenderer: {fileID: 2568188060959074381}
   _currentSpeed: 0
+  _isGrounded: 0
 --- !u!114 &6654497873415944150
 MonoBehaviour:
   m_ObjectHideFlags: 0
