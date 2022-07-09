@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void GroundCheck()
     {
-        if(Physics2D.Raycast(transform.position, Vector2.down, _groundCheckDistance,_groundCheckMask))
+        if(Physics2D.CircleCast(transform.position,0.25f, Vector3.down, _groundCheckDistance,_groundCheckMask))
         {
             if (!_isGrounded)
             {
