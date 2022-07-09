@@ -81,8 +81,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if(_isOnTheFloor) _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        _animator.SetBool("jump",true);
+        if(value.isPressed)
+        {
+            if(_isOnTheFloor) _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _animator.SetTrigger("Jumped");
+        }
     }
     
     void OnInteract(InputValue value) => currentNpc?.OnInteract();
@@ -99,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         if(collision.collider.tag=="Platform")
         {
             _isOnTheFloor = true;
-            _animator.SetBool("jump", false);
         }
     }
 

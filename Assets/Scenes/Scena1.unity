@@ -399,38 +399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5436734751892739133, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_ScreenY
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436734751892739133, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_LookaheadTime
-      value: 0.531
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436734751892739133, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_DeadZoneHeight
-      value: 0.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436734751892739133, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_SoftZoneHeight
-      value: 0.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436734751892739133, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_TrackedObjectOffset.y
-      value: 2.48
-      objectReference: {fileID: 0}
     - target: {fileID: 5436734752526377382, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 649416177}
-    - target: {fileID: 5436734752526377383, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.0185752
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436734752608859478, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.0185752
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060d4ffbee1eb3748a8f6a6b22805c8e, type: 3}
 --- !u!1001 &6654497875088654246
