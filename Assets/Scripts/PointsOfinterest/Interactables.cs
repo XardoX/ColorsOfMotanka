@@ -16,7 +16,7 @@ public class Interactables : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI dialogText;
     
-    private int dialogLine = 0;
+    private int dialogLine = -1;
     private string[] dialogLines;
     
     Tween alphaTween;
@@ -30,10 +30,9 @@ public class Interactables : MonoBehaviour
     {
         if (CanInteract && dialogLine <  dialogLines.Length)
         {
+            
             dialogLine++;
             dialogText.text = dialogLines[dialogLine];
-             
-            Debug.Log("Can Interact");
         }
     }
 
