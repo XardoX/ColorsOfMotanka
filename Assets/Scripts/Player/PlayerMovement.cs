@@ -17,13 +17,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float _jumpForce = 50;
     bool _isOnTheFloor = true;
-    // Start is called before the first frame update
+
+    private Interactables currentNpc;
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         _rb.velocity = new Vector2(_currentSpeed * _moveInput, _rb.velocity.y);
@@ -33,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_isOnTheFloor) _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
     }
+    
+    void OnInteract(InputValue value) => currentNpc?.OnInteract();
+
     Tween currentMoveTween;
     void OnMove(InputValue value)
     {
@@ -63,4 +67,20 @@ public class PlayerMovement : MonoBehaviour
             _isOnTheFloor = false;
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.TryGetComponent(out Interactables npc))
+        {
+            currentNpc = npc;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.TryGetComponent(out Interactables npc))
+        {
+            currentNpc = null;
+        }
+    }   
 }
