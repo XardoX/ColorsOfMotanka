@@ -30,7 +30,6 @@ public class Interactables : MonoBehaviour
     {
         if (CanInteract && dialogLine <  dialogLines.Length)
         {
-            
             dialogLine++;
             dialogText.text = dialogLines[dialogLine];
         }
