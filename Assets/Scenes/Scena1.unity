@@ -461,16 +461,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6654497873415944151, guid: 3d6759af96ac1d645a2c2afa6963c717, type: 3}
-      propertyPath: _braking
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654497873415944151, guid: 3d6759af96ac1d645a2c2afa6963c717, type: 3}
-      propertyPath: _acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7413488309673046460, guid: 3d6759af96ac1d645a2c2afa6963c717, type: 3}
-      propertyPath: m_Material
-      value: 
+      propertyPath: _groundCheckDistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6759af96ac1d645a2c2afa6963c717, type: 3}
