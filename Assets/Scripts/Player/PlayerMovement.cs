@@ -2,7 +2,6 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MyBox;
-
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField][Foldout("settings", true)] 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1516763679461626762}
   - component: {fileID: 3522404956738684505}
-  - component: {fileID: 4144612831640064464}
   - component: {fileID: 7631788721470051010}
   m_Layer: 0
   m_Name: MuralMaskCam
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4144612831640064464
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062732113991374735}
-  m_Enabled: 1
 --- !u!114 &7631788721470051010
 MonoBehaviour:
   m_ObjectHideFlags: 0

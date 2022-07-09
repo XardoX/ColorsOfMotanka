@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6654497873415944151}
   - component: {fileID: 6654497873415944150}
   - component: {fileID: 649416173}
+  - component: {fileID: 1839353520981310788}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -164,6 +165,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1839353520981310788
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654497873415944137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 0.9}
+  m_Direction: 0
 --- !u!1 &8665256198845120040
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,10 +192,9 @@ GameObject:
   - component: {fileID: 8584838689848347207}
   - component: {fileID: 2568188060959074381}
   - component: {fileID: 1487381024}
-  - component: {fileID: 2261485248336167624}
   m_Layer: 3
   m_Name: PlayerArt
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8665256198845120040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,22 +286,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &2261485248336167624
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8665256198845120040}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.59, y: 3.2}
-  m_Direction: 0
 --- !u!1001 &2439740252035469323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,45 +337,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Int.m_Array.Array.data[0].m_Value
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Name
-      value: maxSize
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892337, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9043848564078892343, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
       propertyPath: m_Name
       value: MuralMaskVFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043848564078892343, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eef149024869eb4bbaa64c28ee22202, type: 3}

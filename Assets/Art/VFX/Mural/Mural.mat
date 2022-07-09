@@ -71,6 +71,7 @@ Material:
     - _DrawingStrength: 0.35
     - _EnableExternalAlpha: 0
     - _Saturation: 1.49
+    - _Scale: 0.77
     - _SmudgeStrength: 0.002
     - _Speed: 2.5
     m_Colors:
@@ -79,4 +80,5 @@ Material:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tiling: {r: 50, g: 50, b: 0, a: 0}
+    - _TilingAndOffset: {r: 0.09, g: 0.16, b: 0.468, a: 0.112}
   m_BuildTextureStacks: []
