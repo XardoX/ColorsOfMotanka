@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,24 +17,24 @@ public class PlayerMovement : MonoBehaviour
     float _jumpForce = 50;
     bool _isOnTheFloor = true;
     float _horizontalMove;
+    
     [SerializeField]
     SpriteRenderer _spriteRenderer;
     bool _flippedToRight = true;
-
-    // Start is called before the first frame update
+    private Interactables currentNpc;
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
-       // _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        // _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-
-    // Update is called once per frame
 
     private void Update()
     {
         _horizontalMove = _currentSpeed * _moveInput;
     }
+    
     void FixedUpdate()
     {
         _rb.velocity = new Vector2(_horizontalMove, _rb.velocity.y);
@@ -60,6 +58,9 @@ public class PlayerMovement : MonoBehaviour
         if(_isOnTheFloor) _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         _animator.SetBool("jump",true);
     }
+    
+    void OnInteract(InputValue value) => currentNpc?.OnInteract();
+
     Tween currentMoveTween;
     void OnMove(InputValue value)
     {
@@ -92,4 +93,20 @@ public class PlayerMovement : MonoBehaviour
             _isOnTheFloor = false;
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.TryGetComponent(out Interactables npc))
+        {
+            currentNpc = npc;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.TryGetComponent(out Interactables npc))
+        {
+            currentNpc = null;
+        }
+    }   
 }
