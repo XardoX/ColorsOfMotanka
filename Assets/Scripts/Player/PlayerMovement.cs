@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateCoins()
     {
+        Debug.Log("Coins = " + coinAmount);
         coinText.text = coinAmount.ToString();
     }
 
@@ -156,7 +157,6 @@ public class PlayerMovement : MonoBehaviour
     
     void OnInteract(InputValue value) => currentNpc?.OnInteract();
 
-    Tween currentMoveTween;
     void OnMove(InputValue value)
     {
         _moveInput = value.Get<float>();

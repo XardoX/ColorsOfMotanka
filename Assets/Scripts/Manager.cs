@@ -13,24 +13,34 @@ public class Manager : MonoBehaviour
     private CanvasGroup _credits;
     public void StartGame()
     {
+        Debug.Log("startedGaem");
+
         Time.timeScale = 1f;
         _startCam.SetActive(false);
         DOTween.To(()=> _menu.alpha, x=> _menu.alpha = x, 0, 2).SetEase(Ease.OutSine);
+        _credits.interactable = false;
+        _menu.interactable = false;
     }
     public void RestartGame()
     {
+        Debug.Log("restart");
+
         SceneManager.LoadScene("Main2");
     }
     public void PlayIntro()
     {
+        Debug.Log("ReplayIntro");
         SceneManager.LoadScene("Intro");
     }
     public void ExitGame()
     {
+        Debug.Log("Quit");
+
         Application.Quit();
     }
     public void ShowCredits()
     {
+        _credits.interactable = true;
         DOTween.To(()=> _credits.alpha, x=> _credits.alpha = x, 1, 2).SetEase(Ease.OutSine);
     }
 }
