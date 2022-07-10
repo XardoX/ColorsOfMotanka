@@ -43,7 +43,7 @@ public class IntroCutscene : MonoBehaviour
 
         StringBuilder sb = new StringBuilder();
 
-        cutscenetween =  DOTween.To(() => introText.rectTransform.localPosition.y, x => introText.rectTransform.localPosition = new Vector3(introText.rectTransform.localPosition.x,x,introText.rectTransform.localPosition.z), 225, 3).SetEase(Ease.OutCirc);
+        cutscenetween =  DOTween.To(() => introText.rectTransform.localPosition.y, x => introText.rectTransform.localPosition = new Vector3(introText.rectTransform.localPosition.x,x,introText.rectTransform.localPosition.z), 440, 3).SetEase(Ease.OutCirc);
 
         cutscenetween =  DOTween.To(() => introText.GetComponent<CanvasGroup>().alpha, x => introText.GetComponent<CanvasGroup>().alpha = x, 1, 60).SetEase(Ease.OutCirc);
 
