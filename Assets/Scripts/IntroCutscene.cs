@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IntroCutscene : MonoBehaviour
@@ -83,16 +84,15 @@ public class IntroCutscene : MonoBehaviour
                 dust.Play("FustPoof");
             }
             yield return new WaitForSeconds(2.5f);
-
         }
 
              
       
-        
+        yield return new WaitForSeconds(2f);
 
-        
-        
-       // yield return new WaitUntil(() => { return true;});
+        SceneManager.LoadScene("Main2");
+
+        // yield return new WaitUntil(() => { return true;});
         // while (true)
         // {
         //     

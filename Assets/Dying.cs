@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dying : MonoBehaviour
 {
-    private float lifetime = .2f;
+    private float lifetime = .01f;
 
     public GameObject player;
     

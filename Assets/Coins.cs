@@ -8,12 +8,13 @@ public class Coins : MonoBehaviour
     
     [SerializeField]
     private GameObject circle;
-    
+
+    private bool isTaken = false;
     Tween alphaTween;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.TryGetComponent(out PlayerMovement player))
+        if(collider.gameObject.TryGetComponent(out PlayerMovement player) && !isTaken)
         {
             player.coinAmount++;
             player.UpdateCoins();
@@ -22,8 +23,12 @@ public class Coins : MonoBehaviour
             alphaTween =  DOTween.To(() => circle.transform.localScale.y , x => circle.transform.localScale = new Vector3(circle.transform.localScale.x, x, circle.transform.localScale.z ), 6, 1).SetEase(Ease.OutCirc);
             
             myAnimator.Play("CoinPickUp");
+
             
             GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject, GetComponent<ParticleSystem>().main.duration);;
+
+            isTaken = true;
         }
     }
 }
