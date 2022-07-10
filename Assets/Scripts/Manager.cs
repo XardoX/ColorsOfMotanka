@@ -19,7 +19,7 @@ public class Manager : MonoBehaviour
 
         Time.timeScale = 1f;
         _startCam.SetActive(false);
-        DOTween.To(()=> _menu.alpha, x=> _menu.alpha = x, 0, 2).SetEase(Ease.OutSine);
+        DOTween.To(()=> _menu.alpha, x=> _menu.alpha = x, 0, 2).SetEase(Ease.OutSine).SetUpdate(true).OnUpdate(()=> _menu.gameObject.SetActive(false));
         _credits.interactable = false;
         _menu.interactable = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -46,6 +46,7 @@ public class Manager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        _credits.gameObject.SetActive(true);
         _credits.interactable = true;
         Time.timeScale = 0f;
         _creditsCam.SetActive(true);

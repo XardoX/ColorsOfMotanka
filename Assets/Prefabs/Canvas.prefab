@@ -244,7 +244,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1363857843183806955
 MonoBehaviour:
@@ -371,7 +371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5095871219235638973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 797f81084c710b24392aa654e5d07c1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5b1f5a54075ea44188cf15cdff8fbff, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
