@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &3845856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1595343908170801805, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-  m_PrefabInstance: {fileID: 1595343908171156589}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &3845861
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845856}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &35354426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,10 +5282,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1595343906730973605, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a53f09d5696401146ab0d0a50e23ad94, type: 3}
     - target: {fileID: 1595343906730973607, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5387,29 +5366,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1595343906730973608, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: cloudTextCanvas
-      value: 
-      objectReference: {fileID: 3845861}
     - target: {fileID: 1595343906730973609, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
       propertyPath: m_Name
       value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595343906730973610, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595343906730973610, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595343907183827269, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595343907183827271, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}
-      propertyPath: m_text
-      value: "Hello\nGood Evening \n\u3053\u3093\u3070\u3093\u306F\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38c9a2be7e82da04a861d413d51b073d, type: 3}

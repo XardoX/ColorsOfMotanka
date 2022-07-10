@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659cc0d442de05e47ada88813d66e207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudTextCanvas: {fileID: 0}
+  cloudTextCanvas: {fileID: 3845861}
   dialog: {fileID: 4900000, guid: d888a57eacc226049b0fcc920d2386aa, type: 3}
   dialogText: {fileID: 1595343907183827271}
 --- !u!61 &1595343906730973610
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 8, y: 5.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6246e068b5c00c348a89ad8fb11de19e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a53f09d5696401146ab0d0a50e23ad94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,10 +200,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hello\nForget me \r\nGo on Further\n"
+  m_text: "Hello\nGood Evening \n\u3053\u3093\u3070\u3093\u306F\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d2b3636ce1ab2f47903ac15f7a9acd2, type: 2}
+  m_sharedMaterial: {fileID: -2252129756052797387, guid: 4d2b3636ce1ab2f47903ac15f7a9acd2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 1595343908170801801}
   - component: {fileID: 1595343908170801806}
   - component: {fileID: 1595343908170801807}
+  - component: {fileID: 3845861}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -384,6 +385,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &3845861
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595343908170801805}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8206841262571499630
 GameObject:
   m_ObjectHideFlags: 0

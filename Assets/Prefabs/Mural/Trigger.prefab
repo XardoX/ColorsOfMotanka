@@ -73,6 +73,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggered: 0
+  onTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2121742500941328487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +83,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4634038190629396137}
     m_Modifications:
+    - target: {fileID: 9161285369716143771, guid: 6175785acb2773b42b3d72a4e3df771d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9161285369975372216, guid: 6175785acb2773b42b3d72a4e3df771d, type: 3}
       propertyPath: m_Name
       value: Coins
