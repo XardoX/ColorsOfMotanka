@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Piotr
+  m_text: Piotr Patelski
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d2b3636ce1ab2f47903ac15f7a9acd2, type: 2}
   m_sharedMaterial: {fileID: -2252129756052797387, guid: 4d2b3636ce1ab2f47903ac15f7a9acd2, type: 2}

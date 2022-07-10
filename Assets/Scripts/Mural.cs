@@ -26,7 +26,7 @@ public class Mural : MonoBehaviour
         }
         _finishedMuralMask.gameObject.SetActive(false);
         _endScale = _finishedMuralMask.localScale.x;
-        _finishedMuralMask.scale = Vector3.zero;
+        _finishedMuralMask.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
