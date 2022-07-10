@@ -13,7 +13,6 @@ public class Mural : MonoBehaviour
     private GameObject _muralCam;
     [SerializeField]
     private Transform _finishedMuralMask;
-    [SerializeField]
     private float _endScale=10;
     [SerializeField]
     private float _zoomOutDuration= 5f;
@@ -23,8 +22,11 @@ public class Mural : MonoBehaviour
         _triggers = GetComponentsInChildren<Trigger>(true);
         foreach(Trigger trigger in _triggers)
         {
-            //trigger.onTriggered + () => CheckCompletion();
+            trigger.onTriggered.AddListener(CheckCompletion);
         }
+        _finishedMuralMask.gameObject.SetActive(false);
+        _endScale = _finishedMuralMask.scale.x;
+        _finishedMuralMask.scale = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -56,3 +58,4 @@ public class Mural : MonoBehaviour
         .OnComplete(()=> _muralCam.SetActive(false));
     }
 }
+
