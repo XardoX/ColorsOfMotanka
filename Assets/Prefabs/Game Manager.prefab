@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startCam: {fileID: 8049635582375861922}
   _menu: {fileID: 8049635581534309793}
+  _credits: {fileID: 6954593796819433567}
 --- !u!1 &8049635582375861922
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3319c16c9bb34a04f82ee46808915da1, type: 3}
+--- !u!225 &6954593796819433567 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2150688331894838358, guid: 3319c16c9bb34a04f82ee46808915da1, type: 3}
+  m_PrefabInstance: {fileID: 9032929555784264713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &8049635581534309793 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 1363857841875018152, guid: 3319c16c9bb34a04f82ee46808915da1, type: 3}
