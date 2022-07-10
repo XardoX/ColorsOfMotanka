@@ -29,10 +29,12 @@ public class Manager : MonoBehaviour
     {
         Debug.Log("restart");
 
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main2");
     }
     public void PlayIntro()
     {
+        Time.timeScale = 1f;
         Debug.Log("ReplayIntro");
         SceneManager.LoadScene("Intro");
     }
@@ -40,6 +42,7 @@ public class Manager : MonoBehaviour
     {
         Debug.Log("Quit");
 
+        Time.timeScale = 1f;
         Application.Quit();
     }
     public void ShowCredits()
