@@ -23,12 +23,12 @@ public class Interactables : MonoBehaviour
 
     private void Awake()
     {
-        dialogLines = Regex.Split ( dialog.text, "\n|\r|\r\n" );
+        dialogLines = Regex.Split ( dialog.text, "\n" );
     }
 
     public void OnInteract()
     {
-        if (CanInteract && dialogLine <  dialogLines.Length)
+        if (CanInteract && dialogLine <  dialogLines.Length - 1)
         {
             dialogLine++;
             dialogText.text = dialogLines[dialogLine];
@@ -40,6 +40,12 @@ public class Interactables : MonoBehaviour
         if(collider.gameObject.TryGetComponent(out PlayerMovement player))
         {
             alphaTween =  DOTween.To(() => cloudTextCanvas.alpha, x => cloudTextCanvas.alpha = x, 1, 1).SetEase(Ease.OutCirc);
+
+            if (dialogLine == -1)
+            {
+                dialogLine = 0;
+                dialogText.text = dialogLines[dialogLine];
+            }
             CanInteract = true;
         }
     }

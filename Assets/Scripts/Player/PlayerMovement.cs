@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     bool _flippedToRight = true;
     private Interactables currentNpc;
 
+    private GameObject afterEffect;
+    
     private AudioSource audioSource;
     
     private Dictionary<string, AudioClip> audioLibrary = new Dictionary<string, AudioClip>();
