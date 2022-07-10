@@ -26,7 +26,6 @@ public class Coins : MonoBehaviour
 
             
             GetComponent<ParticleSystem>().Play();
-            Destroy(gameObject, GetComponent<ParticleSystem>().main.duration);;
 
             isTaken = true;
         }
