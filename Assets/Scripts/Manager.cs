@@ -9,6 +9,8 @@ public class Manager : MonoBehaviour
     private GameObject _startCam;
     [SerializeField]
     private CanvasGroup _menu;
+    [SerializeField]
+    private CanvasGroup _credits;
     public void StartGame()
     {
         Time.timeScale = 1f;
@@ -17,7 +19,7 @@ public class Manager : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main2");
     }
     public void PlayIntro()
     {
@@ -26,5 +28,9 @@ public class Manager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void ShowCredits()
+    {
+        DOTween.To(()=> _credits.alpha, x=> _credits.alpha = x, 1, 2).SetEase(Ease.OutSine);
     }
 }

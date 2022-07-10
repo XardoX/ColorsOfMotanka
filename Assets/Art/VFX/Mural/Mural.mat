@@ -62,7 +62,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brigthness: 0.19
+    - _Brigthness: 0.11
     - _DecalAngleFadeSupported: 1
     - _DecalMeshBiasType: 0
     - _DecalMeshDepthBias: 0
@@ -70,10 +70,11 @@ Material:
     - _DrawOrder: 0
     - _DrawingStrength: 0.35
     - _EnableExternalAlpha: 0
-    - _Saturation: 1.49
+    - _Saturation: 2.34
     - _Scale: 0.77
     - _SmudgeStrength: 0.002
     - _Speed: 2.5
+    - _Vibrance: 1.72
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

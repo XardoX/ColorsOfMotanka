@@ -23,7 +23,7 @@ public class Mural : MonoBehaviour
         _triggers = GetComponentsInChildren<Trigger>(true);
         foreach(Trigger trigger in _triggers)
         {
-            trigger.onTriggered += ()=> CheckCompletion();
+            trigger.onTriggered.AddListener(CheckCompletion);
         }
     }
 
