@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,7 +21,7 @@ public class IntroCutscene : MonoBehaviour
     private TextMeshProUGUI introText;
 
     [SerializeField]
-    private Image image1, image2;
+    private Image image1, image2, titleScreen;
 
     [SerializeField]
     private Animator clouds1, clouds2, dust;
@@ -35,14 +36,25 @@ public class IntroCutscene : MonoBehaviour
         introString = Regex.Split ( introTextAsset.text, "\n" );
 
         StartCoroutine(Intro());
+    }
 
+    private void OnJump(InputValue value)
+    {
+        SceneManager.LoadScene("Main2");
     }
 
     IEnumerator Intro()
     {
 
         StringBuilder sb = new StringBuilder();
+        
+        yield return new WaitForSeconds(3);
 
+        
+        cutscenetween =  DOTween.To(() => titleScreen.color.a, x => titleScreen.color = new Color(255,255,255,x) , 0, 10).SetEase(Ease.OutCirc);
+
+        yield return new WaitForSeconds(7.5f);
+        
         cutscenetween =  DOTween.To(() => introText.rectTransform.localPosition.y, x => introText.rectTransform.localPosition = new Vector3(introText.rectTransform.localPosition.x,x,introText.rectTransform.localPosition.z), 440, 3).SetEase(Ease.OutCirc);
 
         cutscenetween =  DOTween.To(() => introText.GetComponent<CanvasGroup>().alpha, x => introText.GetComponent<CanvasGroup>().alpha = x, 1, 60).SetEase(Ease.OutCirc);
