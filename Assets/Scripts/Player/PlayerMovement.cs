@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rb;
     float _horizontalMove;
+
+    public int coinAmount;
     
     bool _flippedToRight = true;
     private Interactables currentNpc;
