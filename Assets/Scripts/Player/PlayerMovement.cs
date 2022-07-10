@@ -5,6 +5,8 @@ using Mono.Cecil;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MyBox;
+using TMPro;
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField][Foldout("settings", true)] 
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rb;
     float _horizontalMove;
+
+    [SerializeField] private TextMeshProUGUI coinText;
 
     public int coinAmount;
     
@@ -66,7 +70,13 @@ public class PlayerMovement : MonoBehaviour
     {
         _horizontalMove = _currentSpeed * _moveInput;
         _animator.SetFloat("speed", Mathf.Abs(_horizontalMove));
+        
         GroundCheck();
+    }
+
+    public void UpdateCoins()
+    {
+        coinText.text = coinAmount.ToString();
     }
 
     void FixedUpdate()
