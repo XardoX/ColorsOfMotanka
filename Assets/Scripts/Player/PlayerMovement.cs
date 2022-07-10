@@ -28,11 +28,11 @@ public class PlayerMovement : MonoBehaviour
     float _currentSpeed;
     [SerializeField][ReadOnly]
     bool _isGrounded = false;
+    [SerializeField][ReadOnly]
+    bool isColliding = false;
     Animator _animator;
     Rigidbody2D _rb;
     float _horizontalMove;
-    
-    bool _flippedToRight = true;
     private Interactables currentNpc;
 
     private GameObject afterEffect;
@@ -66,7 +66,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rb.velocity = new Vector2(_horizontalMove, _rb.velocity.y);
+        if(_isGrounded && !isColliding)
+        {
+            _rb.velocity = new Vector2(_horizontalMove, _rb.velocity.y);
+        }
         _animator.SetFloat("jumpingVelocity", _rb.velocity.y);
 
         if (_moveInput != 0.0f)
@@ -87,8 +90,10 @@ public class PlayerMovement : MonoBehaviour
                 _currentSpeed = Mathf.Clamp(_currentSpeed, -_speed, 0);
             }
         }
-
-        _rb.velocity = new Vector2(_currentSpeed, _rb.velocity.y);
+         if(_isGrounded || !isColliding)
+        {
+            _rb.velocity = new Vector2(_currentSpeed, _rb.velocity.y);
+        }
     }
     void GroundCheck()
     {
@@ -151,12 +156,14 @@ public class PlayerMovement : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        isColliding = true;
     }
-
+    private void OnCollisionStay2D(Collision2D other) {
+        isColliding = true;
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        
+        isColliding = false;
     }
     
     private void OnTriggerEnter2D(Collider2D collider)
