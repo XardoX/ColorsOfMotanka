@@ -25,7 +25,7 @@ public class Mural : MonoBehaviour
             trigger.onTriggered.AddListener(CheckCompletion);
         }
         _finishedMuralMask.gameObject.SetActive(false);
-        _endScale = _finishedMuralMask.scale.x;
+        _endScale = _finishedMuralMask.localScale.x;
         _finishedMuralMask.scale = Vector3.zero;
     }
 
